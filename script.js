@@ -41,3 +41,8 @@ themeButton.addEventListener("click", function () {
   const randomRGBColor = getRandomRGBColor();
   document.body.style.backgroundColor = randomRGBColor;
 });
+const messageContainer = document.querySelector(".messageContainer");
+const clearButton = document.querySelector(".clear-btn");
+clearButton.addEventListener("click", function () {
+  messageContainer.innerHTML = "";
+});
