@@ -15,5 +15,22 @@ for (let btn of completeButtons) {
     numberAssignedElement.innerHTML = numberAssigned + 1;
   });
 }
+
+// Live Date
 const date = new Date();
 const todayDate = (document.querySelector(".date").innerHTML = date);
+
+// Random Background
+const themeButton = document.querySelector(".theme-button");
+
+function getRandomRGBColor() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+themeButton.addEventListener("click", function () {
+  const randomRGBColor = getRandomRGBColor();
+  document.body.style.backgroundColor = randomRGBColor;
+});
