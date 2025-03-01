@@ -6,6 +6,8 @@ for (let btn of completeButtons) {
   btn.addEventListener("click", function () {
     alert("Board updated Successfully");
 
+    this.disabled = true;
+
     let taskAssigned = parseInt(taskAssignedElement.innerText);
     let numberAssigned = parseInt(numberAssignedElement.innerText);
 
@@ -13,6 +15,10 @@ for (let btn of completeButtons) {
       taskAssignedElement.innerText = taskAssigned - 1;
     }
     numberAssignedElement.innerHTML = numberAssigned + 1;
+    const messageContainer = document.querySelector(".messageContainer");
+    const message = document.createElement("p");
+    message.innerText = `You have completed the task ${todayDate}`;
+    messageContainer.appendChild(message);
   });
 }
 
