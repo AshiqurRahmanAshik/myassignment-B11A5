@@ -24,7 +24,8 @@ for (let btn of completeButtons) {
 
 // Live Date
 const date = new Date();
-const todayDate = (document.querySelector(".date").innerHTML = date);
+const todayDate = (document.querySelector(".date").innerHTML =
+  date.toLocaleString());
 
 // Random Background
 const themeButton = document.querySelector(".theme-button");
