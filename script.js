@@ -4,6 +4,7 @@ const numberAssignedElement = document.querySelector(".number-assigned");
 const messageContainer = document.querySelector(".messageContainer");
 const clearButton = document.querySelector(".clear-btn");
 const dateElement = document.querySelector(".date");
+const themeButton = document.querySelector(".theme-button");
 
 const taskNames = [
   "Fix Mobile Button Issue",
@@ -55,4 +56,16 @@ completeButtons.forEach((btn, index) => {
 clearButton.addEventListener("click", function () {
   messageContainer.innerHTML = "";
   completedTasks = 0;
+});
+
+function getRandomRGBColor() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+themeButton.addEventListener("click", function () {
+  const randomRGBColor = getRandomRGBColor();
+  document.body.style.backgroundColor = randomRGBColor;
 });
