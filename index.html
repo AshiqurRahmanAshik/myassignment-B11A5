@@ -4,197 +4,139 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DevBoard</title>
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css"
       rel="stylesheet"
-      type="text/css"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- fontCdn Start -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <!-- fontCdn End -->
-    <!-- Style CSS Start  -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
-    <!-- Style CSS End  -->
   </head>
-  <body class="poppins-regular">
-    <!-- Navbar Start -->
-    <div class="navbar bg-base-100 space-x-1 py-5 px-36">
-      <img src="assets/logo.png" alt="" />
-      <div class="flex-1">
-        <a class="text-xl"> Dev<span class="poppins-bold">Board</span></a>
+  <body class="font-poppins bg-white">
+
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 py-5 px-5 md:px-36 flex flex-wrap items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <img src="assets/logo.png" alt="logo" class="w-10 h-10" />
+        <a class="text-xl font-bold">Dev<span class="font-extrabold">Board</span></a>
       </div>
-      <div class="space-x-2">
-        <img src="assets/checkbox.png" alt="" />
-        <p class="poppins-bold number-assigned">23</p>
-        <img class="theme-button" src="assets/theme-btn.png" alt="" />
+      <div class="flex items-center space-x-2 mt-3 md:mt-0">
+        <img src="assets/checkbox.png" alt="" class="w-6 h-6" />
+        <p class="font-bold number-assigned">23</p>
+        <img src="assets/theme-btn.png" alt="Theme" class="theme-button w-6 h-6 cursor-pointer" />
       </div>
     </div>
-    <!-- Navbar End -->
-    <!-- Banner Section Start -->
-    <div class="flex px-36 mt-10 justify-center">
-      <div class="grid grid-cols-3 w-4/5">
-        <div class="flex space-x-1 items-center">
+
+    <!-- Banner Section -->
+    <div class="flex flex-col md:flex-row px-5 md:px-36 mt-10 justify-center gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-3 w-full md:w-4/5 gap-5">
+
+        <!-- Task Assigned -->
+        <div class="flex items-center space-x-3">
+          <img src="assets/checkbox.png" alt="checkbox" class="w-8 h-8"/>
           <div>
-            <img src="assets/checkbox.png" alt="checkbox" />
-          </div>
-          <div class="">
-            <h1>Task Assigned</h1>
-            <h1 class="poppins-bold task-assigned">6</h1>
+            <h1 class="text-sm md:text-base">Task Assigned</h1>
+            <h1 class="font-bold text-lg task-assigned">6</h1>
           </div>
         </div>
 
-        <div
-          class="flex space-x-1 bg-violet-400 rounded-xl items-center text-white"
-        >
-          <div><img src="assets/board.png" alt="" /></div>
+        <!-- Discover Card -->
+        <div class="flex space-x-3 bg-violet-400 rounded-xl p-3 items-center text-white">
+          <img src="assets/board.png" alt="board" class="w-8 h-8"/>
           <div>
-            <a href="discover.html"
-              ><p>
-                Discover Something <br />
-                New Today
-              </p></a
-            >
+            <a href="discover.html" class="text-sm md:text-base">
+              Discover Something <br />New Today
+            </a>
           </div>
         </div>
 
-        <div class="flex space-x-1 items-center pl-10">
-          <div><img src="assets/calender.png" alt="" /></div>
+        <!-- Date -->
+        <div class="flex items-center space-x-3 pl-2 md:pl-10">
+          <img src="assets/calender.png" alt="calendar" class="w-8 h-8"/>
           <div>
-            <p class="date">
-              Wed,
-              <span class="poppins-bold">Jun 28 2025</span>
+            <p class="text-sm md:text-base date">
+              Wed, <span class="font-bold">Jun 28 2025</span>
             </p>
           </div>
         </div>
       </div>
 
-      <div>
-        <div class="flex space-x-1 text-center">
-          <div>
-            <img src="assets/activity.png" alt="" />
-          </div>
-          <div>
-            <p>Activity Log</p>
-            <button
-              class="clear-btn rounded-lg p-2 bg-violet-400 mt-2 text-white"
-            >
-              Clear History
-            </button>
-          </div>
+      <!-- Activity Log -->
+      <div class="flex items-center space-x-3 mt-5 md:mt-0">
+        <img src="assets/activity.png" alt="activity" class="w-8 h-8"/>
+        <div>
+          <p class="text-sm md:text-base">Activity Log</p>
+          <button class="clear-btn rounded-lg p-2 bg-violet-400 mt-2 text-white text-xs md:text-sm">Clear History</button>
         </div>
       </div>
     </div>
-    <!-- Banner Section End -->
-    <!-- card section start -->
-    <div class="flex">
-      <section class="w-4/5">
-        <div class="mt-10 grid grid-cols-3 px-20 gap-5">
-          <!-- card1 -->
-          <div class="card bg-primary bg-gray-100">
+
+    <!-- Cards Section -->
+    <div class="flex flex-col md:flex-row px-5 md:px-36 mt-10 gap-5">
+      <section class="w-full md:w-4/5">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <!-- Card Template -->
+          <div class="card bg-gray-100 shadow-md rounded-lg p-5">
             <div class="card-body">
-              <h3>ShopEase</h3>
-              <h2 class="card-title">Fix Mobile Button Issue</h2>
-              <p>Ensure the mobile button functions correctly.</p>
-              <div class="card-actions justify-between">
+              <h3 class="text-sm md:text-base">ShopEase</h3>
+              <h2 class="card-title font-bold text-lg md:text-xl">Fix Mobile Button Issue</h2>
+              <p class="text-xs md:text-sm">Ensure the mobile button functions correctly.</p>
+              <div class="card-actions justify-between mt-3">
                 <div>
-                  <h3>Deadline</h3>
-                  <h3>20 March 2025</h3>
+                  <h3 class="text-xs md:text-sm">Deadline</h3>
+                  <h3 class="font-bold text-sm md:text-base">20 March 2025</h3>
                 </div>
-                <button class="btn bg-violet-500 text-white">Completed</button>
+                <button class="btn bg-violet-500 text-white text-xs md:text-sm">Completed</button>
               </div>
             </div>
           </div>
-          <!-- card2 -->
-          <div class="card bg-primary bg-gray-100">
+          <!-- Duplicate the card for other tasks -->
+          <!-- Card2 -->
+          <div class="card bg-gray-100 shadow-md rounded-lg p-5">
             <div class="card-body">
-              <h3>ShopEase</h3>
-              <h2 class="card-title">Add Pay Success Modal</h2>
-              <p>Implement a confirmation modal for successful payments.</p>
-              <div class="card-actions justify-between">
+              <h3 class="text-sm md:text-base">ShopEase</h3>
+              <h2 class="card-title font-bold text-lg md:text-xl">Add Pay Success Modal</h2>
+              <p class="text-xs md:text-sm">Implement a confirmation modal for successful payments.</p>
+              <div class="card-actions justify-between mt-3">
                 <div>
-                  <h3>Deadline</h3>
-                  <h3>21 March 2025</h3>
+                  <h3 class="text-xs md:text-sm">Deadline</h3>
+                  <h3 class="font-bold text-sm md:text-base">21 March 2025</h3>
                 </div>
-                <button class="btn bg-violet-500 text-white">Completed</button>
+                <button class="btn bg-violet-500 text-white text-xs md:text-sm">Completed</button>
               </div>
             </div>
           </div>
-          <!-- card3 -->
-          <div class="card bg-primary bg-gray-100">
+          <!-- Card3 -->
+          <div class="card bg-gray-100 shadow-md rounded-lg p-5">
             <div class="card-body">
-              <h3>ShopEase</h3>
-              <h2 class="card-title">Add New Reaction</h2>
-              <p>Introduce a new reaction option for user engagement.</p>
-              <div class="card-actions justify-between">
+              <h3 class="text-sm md:text-base">ShopEase</h3>
+              <h2 class="card-title font-bold text-lg md:text-xl">Add New Reaction</h2>
+              <p class="text-xs md:text-sm">Introduce a new reaction option for user engagement.</p>
+              <div class="card-actions justify-between mt-3">
                 <div>
-                  <h3>Deadline</h3>
-                  <h3>22 March 2025</h3>
+                  <h3 class="text-xs md:text-sm">Deadline</h3>
+                  <h3 class="font-bold text-sm md:text-base">22 March 2025</h3>
                 </div>
-                <button class="btn bg-violet-500 text-white">Completed</button>
+                <button class="btn bg-violet-500 text-white text-xs md:text-sm">Completed</button>
               </div>
             </div>
           </div>
-          <!-- card4 -->
-          <div class="card bg-primary bg-gray-100">
-            <div class="card-body">
-              <h3>ShopEase</h3>
-              <h2 class="card-title">Fix Video Loading Issue</h2>
-              <p>Optimize video loading for a smoother playback experience</p>
-              <div class="card-actions justify-between">
-                <div>
-                  <h3>Deadline</h3>
-                  <h3>23 March 2025</h3>
-                </div>
-                <button class="btn bg-violet-500 text-white">Completed</button>
-              </div>
-            </div>
-          </div>
-          <!-- card5 -->
-          <div class="card bg-primary bg-gray-100">
-            <div class="card-body">
-              <h3>ShopEase</h3>
-              <h2 class="card-title">Integrate AI Search</h2>
-              <p>Enhance search functionality with AI-powered results.</p>
-              <div class="card-actions justify-between">
-                <div>
-                  <h3>Deadline</h3>
-                  <h3>24 March 2025</h3>
-                </div>
-                <button class="btn bg-violet-500 text-white">Completed</button>
-              </div>
-            </div>
-          </div>
-          <!-- card6 -->
-          <div class="card bg-primary bg-gray-100">
-            <div class="card-body">
-              <h3>ShopEase</h3>
-              <h2 class="card-title">Review Ami Probashi Site</h2>
-              <p>Evaluate the Ami Probashi site for performance.</p>
-              <div class="card-actions justify-between">
-                <div>
-                  <h3>Deadline</h3>
-                  <h3>25 March 2025</h3>
-                </div>
-                <button class="btn bg-violet-500 text-white">Completed</button>
-              </div>
-            </div>
-          </div>
+          <!-- Add remaining cards similarly -->
         </div>
       </section>
-      <section>
-        <div class="messageContainer mt-10 text-sm space-y-5"></div>
+      <section class="w-full md:w-1/5">
+        <div class="messageContainer mt-5 md:mt-10 text-sm space-y-2"></div>
       </section>
     </div>
-    <!-- card section end -->
-    <!-- JS Start  -->
+
+    <!-- JS -->
     <script src="script.js"></script>
-    <!-- JS End  -->
   </body>
 </html>
